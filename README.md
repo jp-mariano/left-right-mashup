@@ -27,6 +27,12 @@ npm run build
 npm run preview
 ```
 
+## Netlify routing and 404 behavior
+
+- This app currently uses a static homepage (`/`) with no client-side route paths.
+- Keep real 404 responses for unknown URLs to preserve crawl quality and avoid soft-404 SEO issues.
+- A custom `public/404.html` is included for a branded not-found page.
+
 ## Manual QA checklist
 
 - Load 1-2 audio files and verify both appear as tracks.
