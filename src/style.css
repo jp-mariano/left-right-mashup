@@ -1,0 +1,232 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Logo-matched palette */
+  --bg:        #252a3a;
+  --surface:   #2c3248;
+  --surface-2: #242839;
+  --text:      #e8eaf5;
+  --muted:     #9aa0bb;
+  --border:    rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.13);
+
+  --blue:       #3b92ff;
+  --blue-hover: #2e85f5;
+  --blue-active:#2275e0;
+
+  --pink:       #f9a8d4;
+  --pink-hover: #f695c8;
+  --pink-active:#f07db8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 3rem;
+}
+
+.app {
+  width: min(980px, 100%);
+  display: grid;
+  gap: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.header p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.controls {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button,
+.button {
+  background: var(--blue);
+  border: 0;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled),
+.button:hover:not([data-disabled="true"]) {
+  background: var(--blue-hover);
+}
+
+button:active:not(:disabled),
+.button:active:not([data-disabled="true"]) {
+  background: var(--blue-active);
+}
+
+button:focus-visible,
+.button:focus-visible,
+input[type="range"]:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.button input[type="file"]:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+.button[data-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button[data-disabled="true"] input {
+  cursor: not-allowed;
+}
+
+input[type="range"] {
+  width: min(320px, 80vw);
+}
+
+#status {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tracks {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.track {
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.track-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.track-top strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.track-row label {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.track-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.track-actions .active {
+  background: var(--pink);
+  color: #1a1a2e;
+}
+
+.track-actions .active:hover {
+  background: var(--pink-hover);
+}
+
+.track-actions .active:active {
+  background: var(--pink-active);
+}
+
+#empty-state {
+  margin: 0;
+  color: var(--muted);
+}
+
+.convert-hint {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.convert-status {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+#convert-heading + .convert-hint + .row + .row {
+  margin-top: 0.85rem;
+}
