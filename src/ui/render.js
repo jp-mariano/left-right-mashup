@@ -160,7 +160,20 @@ export function renderTracks() {
 
       const action = target.dataset.action;
       if (action === "remove") {
+        const wasLastTrack = state.tracks.length === 1;
+        const wasPlaying   = state.isPlaying;
+        const wasRecording = state.recorder?.state === "recording";
+
         removeTrack(track.id);
+
+        if (wasLastTrack) {
+          if (wasRecording) {
+            state.recorder.stop();
+          } else if (wasPlaying) {
+            updateStatus("Stopped");
+          }
+        }
+
         renderTracks();
         refreshControls();
       }
