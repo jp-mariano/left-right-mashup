@@ -1,0 +1,13 @@
+{
+  "name": "Left Right Mashup",
+  "short_name": "LR Mashup",
+  "description": "Browser-based stereo audio mixer and exporter.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#252a3a",
+  "theme_color": "#2c3248",
+  "icons": [
+    { "src": "/og-image.png", "sizes": "1066x800", "type": "image/png" },
+    { "src": "/favicon.ico", "sizes": "any", "type": "image/x-icon" }
+  ]
+}
