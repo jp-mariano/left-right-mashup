@@ -2,6 +2,17 @@
 
 Browser-based stereo mashup tool for loading up to 2 local audio files, setting each track to left/right/center, and exporting a mixed recording.
 
+## Features
+
+- Load up to 2 local audio tracks and mix them in real time.
+- Per-track controls: volume, stereo pan, mute, and exclusive solo.
+- Master controls: play, stop, and master volume.
+- Record the mixed output and download as WebM.
+- Convert WebM to WAV, and convert WebM or WAV to FLAC.
+- Auto-restore project settings from local storage (track settings by filename + master volume).
+- Keyboard and screen-reader-friendly controls.
+- Browser-only processing: everything stays on your device.
+
 ## Run locally
 
 ```bash
@@ -32,20 +43,6 @@ npm run preview
   - re-uploading a file with the same name restores its previous track settings
 - Keyboard and screen reader: Tab through controls; activate buttons with Enter or Space; adjust sliders with arrow keys. Confirm focus outlines are visible and that assistive tech reads meaningful names for transport, upload, each track’s volume and pan, and mute/solo state.
 
-## Deploy (Vercel)
+## License
 
-1. Push this project to a Git repository.
-2. Import the repository in Vercel.
-3. Use defaults:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. Deploy.
-
-## Deploy (Netlify)
-
-1. Push this project to a Git repository.
-2. Import the repository in Netlify.
-3. Use:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-4. Deploy.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
