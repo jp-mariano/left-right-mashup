@@ -106,8 +106,12 @@ button:active:not(:disabled),
 }
 
 button:focus-visible,
-.button:focus-visible,
 input[type="range"]:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+.button:focus-within {
   outline: 2px solid var(--pink);
   outline-offset: 2px;
 }
@@ -130,8 +134,7 @@ button:disabled {
 }
 
 .button input[type="file"]:focus-visible {
-  outline: 2px solid var(--pink);
-  outline-offset: 2px;
+  outline: none;
 }
 
 .button[data-disabled="true"] {
