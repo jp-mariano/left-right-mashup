@@ -84,6 +84,10 @@ document.querySelector("#app").innerHTML = `
       </div>
       <p id="conversion-status" class="convert-status" role="status" aria-live="polite" aria-atomic="true"></p>
     </section>
+
+    <footer class="footer">
+      <p>© 2026 Left Right Mashup &middot; <a href="${import.meta.env.VITE_REPO_URL}" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    </footer>
   </main>
 `;
 
